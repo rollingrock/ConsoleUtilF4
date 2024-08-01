@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 3.21)
 # ---- Options ----
 
 option(COPY_BUILD "Copy the build output to the Fallout 4 directory." OFF)
+option(ENABLE_FALLOUT_F4 "Build for Fallout F4" OFF)
+option(ENABLE_FALLOUT_NG "Build for Fallout NG" OFF)
+option(ENABLE_FALLOUT_VR "Build for Fallout VR" ON)
+
 
 # ---- Cache build vars ----
 
@@ -103,6 +107,7 @@ if(MSVC)
 			"/sdl"	# Enable Additional Security Checks
 			"/utf-8"	# Set Source and Executable character sets to UTF-8
 			"/Zi"	# Debug Information Format
+			"/Zc:preprocessor"
 
 			"/permissive-"	# Standards conformance
 
